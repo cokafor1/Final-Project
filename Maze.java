@@ -47,13 +47,20 @@ public class Maze extends JPanel {
 			coordinates.add(pair);
 		}
 	}//gives me arraylist of Pair objects (coordinates)
+
+	
+//	public void printMaze(Pair[] pairs){
+//		for (int i = 0; i < coordinates.size(); i++){
+//			g.drawRect(pair.getX(), pair.getY(), 12, 12);
+//		}
+//	}
 	
 	@Override
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		for (int i = 0; i < coordinates.size(); i++){
-			g.drawRect(x, y, 10, 10); 
-			g.fillRect(pair.getX(), getY(), 10, 10);
+			g.drawRect(coordinates.get(i).getX(), coordinates.get(i).getY(), 12, 12); 
+			g.fillRect(coordinates.get(i).getX(), coordinates.get(i).getY(), 10, 10);
 		  }
 	}
 	
