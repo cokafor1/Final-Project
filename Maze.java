@@ -20,14 +20,25 @@ public class Maze extends JPanel {
 // write getX(), getY() function
 //print rectangle in that coordinate pair, find layout manager for maze
 	
-	JFrame frame = new JFrame("Maze"); 
+	JFrame frame = new JFrame("Maze");
+
+	frame.setPreferredSize(new Dimension(500,400));
+	frame.setMinimumSize(new Dimension(500,400));
+	frame.setMaximumSize(new Dimension(500,400));
+	frame.setResizable(false);
+	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	frame.setVisible(true); 
+	
+	JPanel panel1 = new JPanel();// this is the main panel where the game will be shown
+	frame.getContentPane().add(panel1);// add panel to frame
+	panel1.setLayout(new BorderLayout());
 	Maze m = new Maze();
 	m.readMaze();
-	frame.setContentPane(new Maze());
-	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	panel1.add(m, BorderLayout.CENTER);
+		
 	frame.pack();
-	frame.setSize(250,250);
-	frame.setVisible(true);  
+	
+	//SET JPANEL BACKGROUND COLOUR
 	}
 		
 	public void readMaze(){
@@ -53,7 +64,7 @@ public class Maze extends JPanel {
 		super.paintComponent(g);
 		for (int i = 0; i < coordinates.size(); i++){
 			g.drawRect(coordinates.get(i).getX(), coordinates.get(i).getY(), 12, 12); 
-			g.fillRect(coordinates.get(i).getX(), coordinates.get(i).getY(), 10, 10);
+			g.fillRect(coordinates.get(i).getX(), coordinates.get(i).getY(), 12, 12);
 		  }
 	}
 	
