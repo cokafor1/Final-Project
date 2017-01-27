@@ -16,6 +16,10 @@ public class Pair{
 		return this.y;
 	}
 	
+	public Pair getPair(){
+		return this.getPair();//incorrect function
+	}
+	
 	public void setX(int x){
 		this.x = x ;
 	}
@@ -25,3 +29,5 @@ public class Pair{
 	}
 	
 }
+
+// Java point class

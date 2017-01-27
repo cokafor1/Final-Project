@@ -65,7 +65,12 @@ public class Maze extends JPanel {
 			coordinates.add(pair);
 		}
 	}//gives me arraylist of Pair objects (coordinates)
-	
+	//generate a 2D array and use special characters to define treasures and special points
+	// int[][] = new int[getX()][getY()]
+	//int size = runtime decides
+	//int[][] = new int[getX()][size]
+	//put size above line
+			
 	@Override
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
