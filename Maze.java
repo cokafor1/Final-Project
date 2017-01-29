@@ -22,34 +22,31 @@ write getX(), getY() function to print rectangle in that coordinate pair, find l
 
 	public void readMaze(){
 		try{
-			file = new Scanner(new File("Maze.txt"));
+			file = new Scanner(new File("Maze3"));
+			x = file.nextInt();
+			y = file.nextInt();
 			
 		}
 		catch(Exception except){
 			System.out.println("No file found.");
 		}
 		
-		BufferedReader bfr = new BufferedReader(new FileReader(file));
 
-		
-		while (file.hasNextInt()){
-			x = file.nextInt();
-			y = file.nextInt();
-		}	
-		file.close();
 		
 		int Maze[][] = new int[x][y];
 		
-		for (int r = 0; r < x; r++){
-			for (int c = 0; c < y; c++){
-				Maze[x][y] = file.nextInt();
+		for (int r = 0; r < x && file.hasNextLine(); r++){
+			for (int c = 0; c < y && file.hasNextInt(); c++){
+				Maze[r][c] = file.nextInt();
 		}
+			file.nextLine();
 			}
 		
 		System.out.printf("(%s,%s) \n", x, y);
 		
 		
 		//System.out.println(Maze[x][y]);
+		file.close();
 	}
 	
 	
