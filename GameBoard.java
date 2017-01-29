@@ -24,7 +24,6 @@ public class GameBoard extends JPanel{
 			JPanel panel1 = new JPanel();// this is the main panel where the game will be shown
 			JPanel panel2 = new JPanel();//this is the status area
 			
-			//frame.getContentPane().add(panel1);// add panel to frame
 			panel1.setLayout(new BorderLayout());
 			panel1.setBackground(Color.CYAN);
 			panel2.setBackground(Color.GRAY);
