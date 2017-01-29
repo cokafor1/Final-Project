@@ -22,7 +22,7 @@ write getX(), getY() function to print rectangle in that coordinate pair, find l
 
 	public void readMaze(){
 		try{
-			file = new Scanner(new File("Maze3"));
+			file = new Scanner(new File("Maze3.txt"));
 			x = file.nextInt();
 			y = file.nextInt();
 			
