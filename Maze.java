@@ -13,64 +13,75 @@ public class Maze extends JPanel {
 	public static ArrayList<Pair> coordinates = new ArrayList<>();
 	private Pair pair;	
 	
+//take main and put in separate file that will create maze, read and add the panel
+//gameboard class with two panels
 	
-	public static void main(String[] args){
-//create empty array list
-// read file, get integers. Get integers as pairs in comma separated list
-// write getX(), getY() function
-//print rectangle in that coordinate pair, find layout manager for maze
-	
-	Maze m = new Maze();
-	m.readMaze();
-		
-	JFrame frame = new JFrame("Maze");
 
-	frame.setPreferredSize(new Dimension(500,400));
-	frame.setMinimumSize(new Dimension(500,400));
-	frame.setMaximumSize(new Dimension(500,400));
-	frame.setResizable(false);
-	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	frame.setVisible(true); 
-	
-	JPanel panel1 = new JPanel();// this is the main panel where the game will be shown
-	JPanel panel2 = new JPanel();//this is the status area
-	
-	//frame.getContentPane().add(panel1);// add panel to frame
-	panel1.setLayout(new BorderLayout());
-	panel1.setBackground(Color.CYAN);
-	panel2.setBackground(Color.GRAY);
-	
-	panel1.add(m);//add the maze to the center of the panel
-	
-	frame.add(panel1, BorderLayout.CENTER);
-	frame.add(panel2, BorderLayout.PAGE_END);
-	
-	//SET JPANEL BACKGROUND COLOUR
-	}
-		
+/*create empty array list, read file, get integers. Get integers as pairs in comma separated list.
+write getX(), getY() function to print rectangle in that coordinate pair, find layout manager for maze */
+
 	public void readMaze(){
 		try{
-			file = new Scanner (new File("Maze.txt"));
+			file = new Scanner(new File("Maze.txt"));
+			
 		}
 		catch(Exception except){
 			System.out.println("No file found.");
 		}
 		
-		while (file.hasNext()){
+		BufferedReader bfr = new BufferedReader(new FileReader(file));
+
+		
+		while (file.hasNextInt()){
 			x = file.nextInt();
 			y = file.nextInt();
-			Pair pair = new Pair(x, y);
-			// print rectangle with x and y as positions
-			System.out.printf("(%s,%s) \n", pair.getX(), pair.getY());
-			coordinates.add(pair);
+		}	
+		file.close();
+		
+		int Maze[][] = new int[x][y];
+		
+		for (int r = 0; r < x; r++){
+			for (int c = 0; c < y; c++){
+				Maze[x][y] = file.nextInt();
 		}
-	}//gives me arraylist of Pair objects (coordinates)
+			}
+		
+		System.out.printf("(%s,%s) \n", x, y);
+		
+		
+		//System.out.println(Maze[x][y]);
+	}
+	
+	
+//	public void readMaze(){
+//		try{
+//			file = new Scanner (new File("Maze2.txt"));
+//		}
+//		catch(Exception except){
+//			System.out.println("No file found.");
+//		}
+//		
+//		while (file.hasNext()){
+//			x = file.nextInt();
+//			y = file.nextInt();
+//			Pair pair = new Pair(x, y);
+//			// print rectangle with x and y as positions
+//			System.out.printf("(%s,%s) \n", pair.getX(), pair.getY());
+//			coordinates.add(pair);
+//		}
+//	}//gives me arraylist of Pair objects (coordinates)
 	//generate a 2D array and use special characters to define treasures and special points
 	// int[][] = new int[getX()][getY()]
 	//int size = runtime decides
 	//int[][] = new int[getX()][size]
 	//put size above line
+	
 			
+	
+	//compare if equal (==) to # or . then say, maze at that pos (r,c) equals open
+	//enum{open = 1
+	//wall = 2
+	//* = 3}
 	@Override
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
@@ -79,5 +90,6 @@ public class Maze extends JPanel {
 			g.fillRect(coordinates.get(i).getX(), coordinates.get(i).getY(), 12, 12);
 		  }
 	}
+	//if, then, else for paintcomponent
 	
 }

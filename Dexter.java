@@ -1,7 +1,7 @@
 import java.awt.Image;
 
 import javax.swing.ImageIcon;
-
+//point class from checker board
 public class Dexter {
 	private int x;
 	private int y;
