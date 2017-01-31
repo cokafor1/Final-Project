@@ -12,8 +12,7 @@ public class Dexter {
 		
 		//OR INITIALIZE BEFORE I CREATE IT 
 		
-		this.x = x;
-		this.y = y;
+		
 		
 		for (int i = 0; i < Maze.length; i++){
 		     for (int j = 0; j < Maze[i].length; j++){
@@ -23,6 +22,9 @@ public class Dexter {
 		    	 }
 		     }
 		}
+		
+		this.x = x;
+		this.y = y;
 		
 		ImageIcon image = new ImageIcon("C:\\Users\\Udo\\workspace\\Final Project 2\\src\\Dexter_Icon.jpg");
 		Dexter = image.getImage();
@@ -42,8 +44,8 @@ public class Dexter {
 	}
 
 	public void reset(){
-	//	x = 0;
-	//	y = 12;
+		x = 0;
+		y = 0;
 	}
 	
 	public void move(int x, int y, int[][] Maze){
@@ -52,20 +54,25 @@ public class Dexter {
 		int moveY = (this.y + y);
 		
 		if (moveX >= 0 && moveY >= 0){
-			
-			if(Maze[moveX][moveY] == Decoder.OPEN.getDecoder()) { //check if move is valid
-		
-			this.x = moveX;
-			this.y = moveY; // put dexter at x,y update location if valid
+			if(Maze[moveX][moveY] == Decoder.START.getDecoder()) { //check if move is valid
+				this.x = moveX;
+				this.y = moveY; // put dexter at index, update location
 			}
-			
-			
+			else if(Maze[moveX][moveY] == Decoder.OPEN.getDecoder()) { //check if move is valid
+				this.x = moveX;
+				this.y = moveY;
+			}
+			else if(Maze[moveX][moveY] == Decoder.WALL.getDecoder()) { //check if move is valid
+				this.x = this.x;
+				this.y = this.y; // don't move, keep same index
+			}
+			else if(Maze[moveX][moveY] == Decoder.END.getDecoder()) { //check if move is valid
+				this.x = moveX;
+				this.y = moveY;
+			}
 		}
 	}
-	
-	}
-	
-//add keylistener to player class
+}
 
 /*
  * Control class (add to panel2)

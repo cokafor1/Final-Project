@@ -52,31 +52,28 @@ public class Maze extends JPanel {
 	}
 	
 	//generate a 2D array and use special characters to define treasures and special points
-	
-	//compare if equal (==) to # or . then say, maze at that pos (r,c) equals open
-	
-	
+		
 	@Override
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		for (int i = 0; i < Maze.length; i++){
 		     for (int j = 0; j < Maze[i].length; j++){
-		    	 if (Maze[i][j] == 0) { // paths
+		    	 if (Maze[i][j] == Decoder.OPEN.getDecoder()) { // paths
 		    		 g.setColor(Color.WHITE);
 		    		 g.drawRect(i*12, j*12, 12, 12);		    		 
 		    	 	 g.fillRect(i*12, j*12, 12, 12);}  
 		    	 
-		    	 else if (Maze[i][j] == 1){ // walls
+		    	 else if (Maze[i][j] == Decoder.WALL.getDecoder()){ // walls
 		    		 g.setColor(Color.DARK_GRAY);
 		    		 g.drawRect(i*12, j*12, 12, 12); 
 		    		 g.fillRect(i*12, j*12, 12, 12);}
 		    	 
-		    	 else if (Maze[i][j] == 2){// start
+		    	 else if (Maze[i][j] == Decoder.START.getDecoder()){// start
 		    		 g.setColor(Color.YELLOW);
 		    		 g.drawRect(i*12, j*12, 12, 12); 
 		    		 g.fillRect(i*12, j*12, 12, 12);}
 		    	 
-		    	 else if (Maze[i][j] == 3){// end 
+		    	 else if (Maze[i][j] == Decoder.END.getDecoder()){// end 
 		    		 g.setColor(Color.RED);
 		    		 g.drawRect(i*12, j*12, 12, 12);
 		    		 g.fillRect(i*12, j*12, 12, 12);}
