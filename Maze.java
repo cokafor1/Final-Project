@@ -37,8 +37,8 @@ public class Maze extends JPanel {
 		Maze = new int[x][y];
 		System.out.printf("(%s,%s) \n", x, y);
 		
-		for (int r = 0; r < y ; r++){
-			for (int c = 0; c < x ; c++){
+		for (int r = 0; r < y ; r++){ //y
+			for (int c = 0; c < x ; c++){ //x
 				Maze[c][r] = file.nextInt();
 			}
 
@@ -107,11 +107,11 @@ public class Maze extends JPanel {
 				}
 				
 				if (key == KeyEvent.VK_LEFT){
-					D.move(-12, 0, Maze);
+					D.move(-1, 0, Maze);
 				}
 
 				if (key == KeyEvent.VK_RIGHT){
-					D.move(12, 0, Maze);
+					D.move(1, 0, Maze);
 				}
 				
 				if (key == KeyEvent.VK_R ){

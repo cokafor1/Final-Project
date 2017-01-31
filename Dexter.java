@@ -5,21 +5,28 @@ import javax.swing.ImageIcon;
 public class Dexter {
 	private int x;
 	private int y;
-	private int pos;
 	private Image Dexter;
 	
 	public Dexter(int x, int y, int[][] Maze){
+		//PASS 2d ARRAY AND USE FOR LOOP TO FIND 2 (get VALS TO ASSIGN X,Y)
+		
+		//OR INITIALIZE BEFORE I CREATE IT 
 		
 		this.x = x;
 		this.y = y;
 		
+		for (int i = 0; i < Maze.length; i++){
+		     for (int j = 0; j < Maze[i].length; j++){
+		    	 if (Maze[i][j] == Decoder.START.getDecoder()) { // paths
+		    		 x = j;
+		 			 y = i;
+		    	 }
+		     }
+		}
+		
 		ImageIcon image = new ImageIcon("C:\\Users\\Udo\\workspace\\Final Project 2\\src\\Dexter_Icon.jpg");
 		Dexter = image.getImage();
-		
-		x = 1;
-		y = 0;
-		
-		int pos = Maze[x][y];
+
 	}
 
 	public Image getDexter(){
@@ -35,32 +42,30 @@ public class Dexter {
 	}
 
 	public void reset(){
-		x = 0;
-		y = 12;
+	//	x = 0;
+	//	y = 12;
 	}
 	
 	public void move(int x, int y, int[][] Maze){
 		//get move
-		int moveX = (this.x + 1);
-		int moveY = (this.y + 1);
+		int moveX = (this.x + x);
+		int moveY = (this.y + y);
 		
-		if (Maze[moveX][moveY] == 0) { //check if move is valid
-			this.x += 1;
-			this.y += 1; // put dexter at x,y update location if valid
+		if (moveX >= 0 && moveY >= 0){
+			
+			if(Maze[moveX][moveY] == Decoder.OPEN.getDecoder()) { //check if move is valid
+		
+			this.x = moveX;
+			this.y = moveY; // put dexter at x,y update location if valid
+			}
+			
+			
 		}
-		else if (Maze[moveX][moveY] == 1){
-			this.x = x;
-			this.y = y;
-		}
-		else{
-			this.x += 1;
-			this.y += 1;
-		}
-		}
+	}
 	
 	}
 	
-
+//add keylistener to player class
 
 /*
  * Control class (add to panel2)
