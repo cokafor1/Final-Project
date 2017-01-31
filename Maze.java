@@ -1,4 +1,6 @@
 import java.awt.*;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.io.File;
 import java.util.*;
 
@@ -40,9 +42,7 @@ public class Maze extends JPanel {
 		}
 		//System.out.println(Arrays.deepToString(Maze));
 		file.close();
-		D = new Dexter(0,0);
-			if (Maze[i][j] == 2){
-				Dexter.move(i, j, Maze[i][j]);}
+		D = new Dexter();
 	}
 	
 	//generate a 2D array and use special characters to define treasures and special points
@@ -87,6 +87,34 @@ public class Maze extends JPanel {
 		
 	}
 	
+	public class KeyListener extends KeyAdapter{
+    	    	
+    		public void keyPressed(KeyEvent e){
+    			int key = e.getKeyCode();
+    			
+    			if (key == KeyEvent.VK_UP){
+    				D.move(0, y--, Maze[x][y]);
+    			}
+    			
+				if (key == KeyEvent.VK_DOWN){
+					D.move(0, y++, Maze[x][y]);				
+				}
+				
+				if (key == KeyEvent.VK_LEFT){
+					D.move(x--, 0, Maze[x][y]);
+				}
+
+				if (key == KeyEvent.VK_RIGHT){
+					D.move(x++, 0, Maze[x][y]);
+				}
+				
+				if (key == KeyEvent.VK_R ){
+					D.reset();
+				}
+				
+				repaint();
+    		}
+	
 	
 
 	
@@ -95,4 +123,4 @@ public class Maze extends JPanel {
 //	    	repaint();
 //	    }
 	
-}
+}}

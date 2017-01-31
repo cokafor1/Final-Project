@@ -7,7 +7,7 @@ public class Dexter {
 	private int y;
 	private Image Dexter;
 	
-	public Dexter(int x, int y){
+	public Dexter(){
 		this.x = x;
 		this.y = y;
 		
@@ -17,7 +17,7 @@ public class Dexter {
 		x = 0;
 		y = 0;
 	}
-	
+
 	public Image getDexter(){
 		return Dexter;
 	}
@@ -35,14 +35,14 @@ public class Dexter {
 		y = 0;
 	}
 	
-	public void move(int x, int y, int[][] Maze){
+	public void move(int x, int y, int Maze){
 		//get move
 		
 		//check if move is valid
 		//update location if valid
-			if (Maze[x][y] != 0) {
-				this.x += x;
-				this.y += y; //put dexter at x,y
+			if ((int Maze[x][y]) != 0) {
+				(this.x)++;
+				(this.y)++; //put dexter at x,y
 		    }
 	
 }}
