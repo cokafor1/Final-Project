@@ -2,9 +2,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
+import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-public class ControlPanel {//extend JPanel
+public class ControlPanel extends JPanel{
 //this method makes objects to put in another JPanel, good way to do?
 	public ControlPanel(){
 	    JButton reset = new JButton("Reset");
