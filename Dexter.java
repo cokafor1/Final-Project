@@ -5,18 +5,21 @@ import javax.swing.ImageIcon;
 public class Dexter {
 	private int x;
 	private int y;
+	private int pos;
 	private Image Dexter;
 	
-	public Dexter(int x, int y){
+	public Dexter(int x, int y, int[][] Maze){
 		
-		this.x = 12*x;
-		this.y = 12*y;
+		this.x = x;
+		this.y = y;
 		
 		ImageIcon image = new ImageIcon("C:\\Users\\Udo\\workspace\\Final Project 2\\src\\Dexter_Icon.jpg");
 		Dexter = image.getImage();
 		
-		x = 12;
+		x = 1;
 		y = 0;
+		
+		int pos = Maze[x][y];
 	}
 
 	public Image getDexter(){
@@ -38,20 +41,20 @@ public class Dexter {
 	
 	public void move(int x, int y, int[][] Maze){
 		//get move
-		int tempX = (this.x + x)/12;
-		int tempY = (this.y + y)/12;
+		int moveX = (this.x + 1);
+		int moveY = (this.y + 1);
 		
-		if (Maze[tempX][tempY] == 0) { //check if move is valid
-			this.x += tempX/12;
-			this.y += tempY/12; // put dexter at x,y update location if valid
+		if (Maze[moveX][moveY] == 0) { //check if move is valid
+			this.x += 1;
+			this.y += 1; // put dexter at x,y update location if valid
 		}
-		else if (Maze[tempY][tempX] == 1){
-			this.x = x/12;
-			this.y = y/12;
+		else if (Maze[moveX][moveY] == 1){
+			this.x = x;
+			this.y = y;
 		}
 		else{
-			this.x += tempX/12;
-			this.y += tempY/12;
+			this.x += 1;
+			this.y += 1;
 		}
 		}
 	

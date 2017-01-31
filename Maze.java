@@ -46,7 +46,7 @@ public class Maze extends JPanel {
 		}
 		System.out.println(Arrays.deepToString(Maze));
 		file.close();
-		D = new Dexter(0,0);
+		D = new Dexter(1, 0, Maze);
 		addKeyListener(new KeyListener());
         setFocusable(true);
 	}
@@ -99,11 +99,11 @@ public class Maze extends JPanel {
     			int key = e.getKeyCode();
     			
     			if (key == KeyEvent.VK_UP){
-    				D.move(0, -12, Maze);
+    				D.move(0, -1, Maze);
     			}
     			
 				if (key == KeyEvent.VK_DOWN){
-					D.move(0, 12, Maze);				
+					D.move(0, 1, Maze);				
 				}
 				
 				if (key == KeyEvent.VK_LEFT){
