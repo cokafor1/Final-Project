@@ -8,10 +8,20 @@ public class Dexter {
 	private Image Dexter;
 	
 	public Dexter(int x, int y){
+		this.x = x;
+		this.y = y;
 		
-		ImageIcon image = new ImageIcon("C:\\Users\\Udo\\Desktop\\Ballet\\yellow square.png");
+		ImageIcon image = new ImageIcon("C:\\Users\\Udo\\workspace\\Final Project 2\\src\\Dexter_Icon.jpg");
 		Dexter = image.getImage();
+		
+		x = 0;
+		y = 0;
 	}
+	
+	public Image getDexter(){
+		return Dexter;
+	}
+	
 	public int getX(){
 		return x;
 	}
@@ -20,12 +30,22 @@ public class Dexter {
 		return y;
 	}
 
-//	public boolean chekPos(Pair coordinate){// how to check if in correct path
-//		if (getX()&getY() in coordinates){
-//		}
-//	} 
+	public void reset(){
+		x = 0;
+		y = 0;
+	}
 	
-}
+	public void move(int x, int y, int[][] Maze){
+		//get move
+		
+		//check if move is valid
+		//update location if valid
+			if (Maze[x][y] != 0) {
+				this.x += x;
+				this.y += y; //put dexter at x,y
+		    }
+	
+}}
 
 /*
  * Control class (add to panel2)

@@ -14,9 +14,9 @@ public class GameBoard extends JPanel{
 				
 			JFrame frame = new JFrame("Maze");
 
-			frame.setPreferredSize(new Dimension(500,400));
-			frame.setMinimumSize(new Dimension(500,400));
-			frame.setMaximumSize(new Dimension(500,400));
+			frame.setPreferredSize(new Dimension(500,412));
+			frame.setMinimumSize(new Dimension(500,412));
+			frame.setMaximumSize(new Dimension(500,412));
 			frame.setResizable(false);
 			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			frame.setVisible(true); 
