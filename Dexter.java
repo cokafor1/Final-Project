@@ -5,11 +5,12 @@ import javax.swing.ImageIcon;
 public class Dexter {
 	private int x;
 	private int y;
-	private int dx;
-	private int dy;
 	private Image Dexter;
 	
-	public Dexter(){
+	public Dexter(int x, int y){
+		
+		this.x = x;
+		this.y = y;
 		
 		ImageIcon image = new ImageIcon("C:\\Users\\Udo\\workspace\\Final Project 2\\src\\Dexter_Icon.jpg");
 		Dexter = image.getImage();
@@ -37,9 +38,12 @@ public class Dexter {
 	
 	public void move(int x, int y, int[][] Maze){
 		//get move
-		if (Maze[x][y] != 0) { //check if move is valid
-			(this.x) += x;
-			(this.y) += y; //put dexter at x,y update location if valid
+		int tempX = (this.x + x)/12;
+		int tempY = (this.y + y)/12;
+		
+		if (Maze[tempX][tempY] != 0) { //check if move is valid
+			this.x += tempX;
+			this.y += tempY; // put dexter at x,y update location if valid
 		}
 	
 	}

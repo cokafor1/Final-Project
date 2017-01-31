@@ -42,11 +42,11 @@ public class Maze extends JPanel {
 				Maze[c][r] = file.nextInt();
 			}
 
-			System.out.println(Arrays.toString(Maze[r]));
+			//System.out.println(Arrays.toString(Maze[r]));
 		}
-		//System.out.println(Arrays.deepToString(Maze));
+		System.out.println(Arrays.deepToString(Maze));
 		file.close();
-		D = new Dexter();
+		D = new Dexter(0,0);
 		addKeyListener(new KeyListener());
         setFocusable(true);
 	}
