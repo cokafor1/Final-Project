@@ -1,4 +1,5 @@
 import java.awt.*;
+import java.awt.event.ActionEvent;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.io.File;
@@ -12,9 +13,12 @@ public class Maze extends JPanel {
 	public Scanner file;	
 	private int x;
 	private int y;
-	public static ArrayList<Pair> coordinates = new ArrayList<>();
 	public int[][] Maze;
 	private Dexter D;
+	
+	public void actionPerformed(ActionEvent e){
+    	repaint();
+    }
 	
 //take main and put in separate file that will create maze, read and add the panel
 //gameboard class with two panels
@@ -43,6 +47,8 @@ public class Maze extends JPanel {
 		//System.out.println(Arrays.deepToString(Maze));
 		file.close();
 		D = new Dexter();
+		addKeyListener(new KeyListener());
+        setFocusable(true);
 	}
 	
 	//generate a 2D array and use special characters to define treasures and special points
@@ -83,7 +89,7 @@ public class Maze extends JPanel {
 			
 		  }
 		 
-		g.drawImage(D.getDexter(), D.getX(), D.getY(), null);
+		g.drawImage(D.getDexter(), D.getX()*12, D.getY()*12, null);
 		
 	}
 	
@@ -93,19 +99,19 @@ public class Maze extends JPanel {
     			int key = e.getKeyCode();
     			
     			if (key == KeyEvent.VK_UP){
-    				D.move(0, y--, Maze[x][y]);
+    				D.move(0, -12, Maze);
     			}
     			
 				if (key == KeyEvent.VK_DOWN){
-					D.move(0, y++, Maze[x][y]);				
+					D.move(0, 12, Maze);				
 				}
 				
 				if (key == KeyEvent.VK_LEFT){
-					D.move(x--, 0, Maze[x][y]);
+					D.move(-12, 0, Maze);
 				}
 
 				if (key == KeyEvent.VK_RIGHT){
-					D.move(x++, 0, Maze[x][y]);
+					D.move(12, 0, Maze);
 				}
 				
 				if (key == KeyEvent.VK_R ){

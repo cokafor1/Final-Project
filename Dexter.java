@@ -5,11 +5,11 @@ import javax.swing.ImageIcon;
 public class Dexter {
 	private int x;
 	private int y;
+	private int dx;
+	private int dy;
 	private Image Dexter;
 	
 	public Dexter(){
-		this.x = x;
-		this.y = y;
 		
 		ImageIcon image = new ImageIcon("C:\\Users\\Udo\\workspace\\Final Project 2\\src\\Dexter_Icon.jpg");
 		Dexter = image.getImage();
@@ -32,20 +32,19 @@ public class Dexter {
 
 	public void reset(){
 		x = 0;
-		y = 0;
+		y = 12;
 	}
 	
-	public void move(int x, int y, int Maze){
+	public void move(int x, int y, int[][] Maze){
 		//get move
-		
-		//check if move is valid
-		//update location if valid
-			if ((int Maze[x][y]) != 0) {
-				(this.x)++;
-				(this.y)++; //put dexter at x,y
-		    }
+		if (Maze[x][y] != 0) { //check if move is valid
+			(this.x) += x;
+			(this.y) += y; //put dexter at x,y update location if valid
+		}
 	
-}}
+	}
+	
+}
 
 /*
  * Control class (add to panel2)
