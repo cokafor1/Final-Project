@@ -11,12 +11,14 @@ public class GameBoard extends JPanel{
 			
 			Maze m = new Maze();
 			m.readMaze();
-				
+			
+			ControlPanel control = new ControlPanel();
+			
 			JFrame frame = new JFrame("Maze");
 
-			frame.setPreferredSize(new Dimension(500,412));
-			frame.setMinimumSize(new Dimension(500,412));
-			frame.setMaximumSize(new Dimension(500,412));
+			frame.setPreferredSize(new Dimension(500,450));
+			frame.setMinimumSize(new Dimension(500,450));
+			frame.setMaximumSize(new Dimension(500,450));
 			frame.setResizable(false);
 			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			frame.setVisible(true); 
@@ -25,10 +27,11 @@ public class GameBoard extends JPanel{
 			JPanel panel2 = new JPanel();//this is the status area
 			
 			panel1.setLayout(new BorderLayout());
-			panel1.setBackground(Color.CYAN);
+			panel1.setBackground(Color.WHITE);
 			panel2.setBackground(Color.GRAY);
 			
-			panel1.add(m);//add the maze to the center of the panel
+			panel1.add(m);//add the maze to the center of the top panel
+			panel2.add(control);
 			
 			frame.add(panel1, BorderLayout.CENTER);
 			frame.add(panel2, BorderLayout.PAGE_END);
