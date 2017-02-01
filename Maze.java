@@ -14,14 +14,11 @@ public class Maze extends JPanel {
 	private int x;
 	private int y;
 	public int[][] Maze;
-	private Dexter D;
+	public Dexter D;
 	
-	public void actionPerformed(ActionEvent e){
-    	repaint();
-    }
-	
-//take main and put in separate file that will create maze, read and add the panel
-//gameboard class with two panels
+//	public void actionPerformed(ActionEvent e){
+//    	repaint();
+//    }
 	
 	public void readMaze(){
 		try{
@@ -41,17 +38,16 @@ public class Maze extends JPanel {
 			for (int c = 0; c < x ; c++){ //x
 				Maze[c][r] = file.nextInt();
 			}
-
-			//System.out.println(Arrays.toString(Maze[r]));
 		}
+		
 		System.out.println(Arrays.deepToString(Maze));
 		file.close();
+		
 		D = new Dexter(1, 0, Maze);
 		addKeyListener(new KeyListener());
         setFocusable(true);
 	}
 	
-	//generate a 2D array and use special characters to define treasures and special points
 		
 	@Override
 	public void paintComponent(Graphics g) {
@@ -61,7 +57,8 @@ public class Maze extends JPanel {
 		    	 if (Maze[i][j] == Decoder.OPEN.getDecoder()) { // paths
 		    		 g.setColor(Color.WHITE);
 		    		 g.drawRect(i*12, j*12, 12, 12);		    		 
-		    	 	 g.fillRect(i*12, j*12, 12, 12);}  
+		    	 	 g.fillRect(i*12, j*12, 12, 12);}
+		    	 	 //g.drawImage(D.getDexter(), i*12, j*12, null);}  
 		    	 
 		    	 else if (Maze[i][j] == Decoder.WALL.getDecoder()){ // walls
 		    		 g.setColor(Color.DARK_GRAY);
@@ -117,13 +114,4 @@ public class Maze extends JPanel {
 				
 				repaint();
     		}
-	
-	
-
-	
-//	private Dexter p;	
-//	 public void actionPerformed(ActionEvent e){
-//	    	repaint();
-//	    }
-	
 }}
