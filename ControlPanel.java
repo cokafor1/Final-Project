@@ -7,7 +7,7 @@ import javax.swing.JTextField;
 
 public class ControlPanel extends JPanel{
 //this method makes objects to put in another JPanel, good way to do?
-	public ControlPanel(){
+	public ControlPanel(Maze m){
 	    JButton reset = new JButton("Reset");
 	    JButton help = new JButton("Help");
 	    JButton button = new JButton("Move");

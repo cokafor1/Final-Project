@@ -12,7 +12,7 @@ public class GameBoard extends JPanel{
 			Maze m = new Maze();
 			m.readMaze();
 			
-			ControlPanel control = new ControlPanel();
+			ControlPanel control = new ControlPanel(m);
 			
 			JFrame frame = new JFrame("Maze");
 
