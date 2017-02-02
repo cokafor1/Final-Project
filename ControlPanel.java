@@ -10,12 +10,12 @@ public class ControlPanel extends JPanel{
 	public ControlPanel(Maze m){
 	    JButton reset = new JButton("Reset");
 	    JButton help = new JButton("Help");
-	    JButton button = new JButton("Move");
+	    JButton move = new JButton("Move");
 	    JTextField textfield = new JTextField();
 	
 	    add(reset);
 	    add(help);
-	    add(button);
+	    add(move);
 	    add(textfield);
 	    
 	reset.addActionListener(new ActionListener(){
@@ -28,7 +28,7 @@ public class ControlPanel extends JPanel{
 			   
 		   }});
 		   
-	button.addActionListener(new ActionListener(){
+	move.addActionListener(new ActionListener(){
 		public void actionPerformed(ActionEvent e){
 			
 		}});
