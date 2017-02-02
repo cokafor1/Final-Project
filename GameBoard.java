@@ -16,13 +16,6 @@ public class GameBoard extends JPanel{
 			
 			JFrame frame = new JFrame("Maze");
 
-			frame.setPreferredSize(new Dimension(500,450));
-			frame.setMinimumSize(new Dimension(500,450));
-			frame.setMaximumSize(new Dimension(500,450));
-			frame.setResizable(false);
-			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-			frame.setVisible(true); 
-			
 			JPanel panel1 = new JPanel();// this is the main panel where the game will be shown
 			JPanel panel2 = new JPanel();//this is the status area
 			
@@ -35,6 +28,13 @@ public class GameBoard extends JPanel{
 			
 			frame.add(panel1, BorderLayout.CENTER);
 			frame.add(panel2, BorderLayout.PAGE_END);
+			
+			frame.setPreferredSize(new Dimension(500,450));
+			frame.setMinimumSize(new Dimension(500,450));
+			frame.setMaximumSize(new Dimension(500,450));
+			frame.setResizable(false);
+			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			frame.setVisible(true);
 
 	}
 }
