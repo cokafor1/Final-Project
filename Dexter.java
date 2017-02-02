@@ -77,7 +77,6 @@ public class Dexter {
 /*
  * Control class (add to panel2)
  * create something to pop open a new window
-buttons needed- help, reset, move 
-text field */ 
+*/ 
 //add a player
 

@@ -10,27 +10,27 @@ public class ControlPanel extends JPanel{
 	public ControlPanel(){
 	    JButton reset = new JButton("Reset");
 	    JButton help = new JButton("Help");
-	    JButton move = new JButton("Move");
+	    JButton button = new JButton("Move");
 	    JTextField textfield = new JTextField();
 	
 	    add(reset);
 	    add(help);
-	    add(move);
+	    add(button);
 	    add(textfield);
 	    
 	reset.addActionListener(new ActionListener(){
 		public void actionPerformed(ActionEvent e){
-			//ADD D.reset() 
-		}});
+		   
+		   }});
 	
 	help.addActionListener(new ActionListener(){
 		public void actionPerformed(ActionEvent e){
-			//ADD pop up window with instructions   
-		}});
+			   
+		   }});
 		   
-	move.addActionListener(new ActionListener(){
+	button.addActionListener(new ActionListener(){
 		public void actionPerformed(ActionEvent e){
-			//ADD D.move() 
+			
 		}});
 }}
 	
