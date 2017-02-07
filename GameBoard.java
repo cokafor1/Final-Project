@@ -14,10 +14,14 @@ public class GameBoard extends JPanel{
 			
 			ControlPanel control = new ControlPanel(m);
 			
-			JFrame frame = new JFrame("Maze");
+			control.getBytes().setText(m.getScore() + "MB");
+			//control.showLoc(m.getPlayer().getX(), m.getPlayer().getY());
+			control.getLoc().setText(String.format("Location: %d, %d", m.getPlayer().getX(), m.getPlayer().getY()));;
+			
+			JFrame frame = new JFrame("Dexter's Labyrinth");
 
 			JPanel panel1 = new JPanel();// this is the main panel where the game will be shown
-			JPanel panel2 = new JPanel();//this is the status area
+			JPanel panel2 = new JPanel();//this is the control area
 			
 			panel1.setLayout(new BorderLayout());
 			panel1.setBackground(Color.WHITE);
@@ -29,9 +33,9 @@ public class GameBoard extends JPanel{
 			frame.add(panel1, BorderLayout.CENTER);
 			frame.add(panel2, BorderLayout.PAGE_END);
 			
-			frame.setPreferredSize(new Dimension(500,450));
-			frame.setMinimumSize(new Dimension(500,450));
-			frame.setMaximumSize(new Dimension(500,450));
+			frame.setPreferredSize(new Dimension(664,574));
+			frame.setMinimumSize(new Dimension(664,574));
+			frame.setMaximumSize(new Dimension(664,574));
 			frame.setResizable(false);
 			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			frame.setVisible(true);
