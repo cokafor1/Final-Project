@@ -1,6 +1,6 @@
 
 public enum Decoder {
-		OPEN (0), WALL (1), START (2), END (3);
+		OPEN (0), WALL (1), START (2), RAM (3), END (4);
 	
 	private int value;
 	
