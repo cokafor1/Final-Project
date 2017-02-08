@@ -68,7 +68,6 @@ public class ControlPanel extends JPanel{
 		public void actionPerformed(ActionEvent e){
 			x.getPlayer().move(0, -1, x.Labyrinth);
 			x.repaint();
-//			x.reset();
 		}});
 	
 	down.addActionListener(new ActionListener(){
@@ -98,13 +97,4 @@ public class ControlPanel extends JPanel{
 		return location;
 	}
 	
-//	public void showLoc(int a, int b){
-//		System.out.printf("Location: %d, %d", x.getPlayer().getX(), x.getPlayer().getY());
-//		location.setText(String.format("Location: %d, %d", x.getPlayer().getX(), x.getPlayer().getY()));
-//	}
 }
-/*MAIN ISSUES-
- * Communication between Control Panel and Maze
- * Direction buttons don't work
- * Labels don't update in GUI but print correctly
- */	

@@ -18,7 +18,7 @@ public class Maze extends JPanel {
 	public int[][] Labyrinth;
 	private Dexter D;
 	
-	ControlPanel c;		// = new ControlPanel(this);
+	ControlPanel c;
 	
 	KeyListener key = new KeyListener();
 	
@@ -101,7 +101,6 @@ public class Maze extends JPanel {
 			Labyrinth[D.getX()][D.getY()] = 0; //update array
 			score += 1024;
 			c.getBytes().setText(getScore() + "MB");
-			System.out.println(c.getBytes().getText());
 		}
 		if (Labyrinth[D.getX()][D.getY()] == Decoder.END.getDecoder()){//end game when file is found
 			g.drawImage(EndGame.getImage(), 0, 0, null);
@@ -141,7 +140,6 @@ public class Maze extends JPanel {
 				}
 				repaint(); //repaints window any time there is an update in player position
 				c.getLoc().setText(String.format("Location: %d, %d", D.getX(), D.getY()));
-				System.out.println(c.getLoc().getText());
     		}
 	}
 	
@@ -160,9 +158,3 @@ public class Maze extends JPanel {
 		score = 0;
 	}
 }
-
-/*MAIN ISSUES-
- * Communication between Control Panel and Maze
- * Direction buttons don't work
- * Labels don't update in GUI but print correctly
- */	

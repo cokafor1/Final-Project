@@ -17,7 +17,6 @@ public class GameBoard extends JPanel{
 			m.setControlPanel(control);
 			
 			control.getBytes().setText(m.getScore() + "MB");
-			//control.showLoc(m.getPlayer().getX(), m.getPlayer().getY());
 			control.getLoc().setText(String.format("Location: %d, %d", m.getPlayer().getX(), m.getPlayer().getY()));;
 			
 			JFrame frame = new JFrame("Dexter's Labyrinth");
