@@ -18,7 +18,7 @@ public class Maze extends JPanel {
 	public int[][] Labyrinth;
 	private Dexter D;
 	
-	ControlPanel c = new ControlPanel(this);
+	ControlPanel c;		// = new ControlPanel(this);
 	
 	KeyListener key = new KeyListener();
 	
@@ -109,6 +109,11 @@ public class Maze extends JPanel {
 		}
 	}
 	
+	public void setControlPanel (ControlPanel c)
+	{
+		this.c = c;
+	}
+	
 	public class KeyListener extends KeyAdapter{
     	    
 		@Override
@@ -134,7 +139,6 @@ public class Maze extends JPanel {
 				if (e.isControlDown() && key == KeyEvent.VK_R){
 					reset();
 				}
-				//System.out.printf("Location: %d, %d \n", D.getX(), D.getY());
 				repaint(); //repaints window any time there is an update in player position
 				c.getLoc().setText(String.format("Location: %d, %d", D.getX(), D.getY()));
 				System.out.println(c.getLoc().getText());
@@ -146,7 +150,6 @@ public class Maze extends JPanel {
 	} 
 
 	public int getScore(){
-//		System.out.print(score);
 		return score;
 	}
 	
@@ -157,3 +160,9 @@ public class Maze extends JPanel {
 		score = 0;
 	}
 }
+
+/*MAIN ISSUES-
+ * Communication between Control Panel and Maze
+ * Direction buttons don't work
+ * Labels don't update in GUI but print correctly
+ */	

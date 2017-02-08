@@ -67,22 +67,26 @@ public class ControlPanel extends JPanel{
 	up.addActionListener(new ActionListener(){
 		public void actionPerformed(ActionEvent e){
 			x.getPlayer().move(0, -1, x.Labyrinth);
-			//x.reset();
+			x.repaint();
+//			x.reset();
 		}});
 	
 	down.addActionListener(new ActionListener(){
 		public void actionPerformed(ActionEvent e){
-			//x.getPlayer().move(0, 1, x.Labyrinth);
+			x.getPlayer().move(0, 1, x.Labyrinth);
+			x.repaint();
 		}});
 	
 	left.addActionListener(new ActionListener(){
 		public void actionPerformed(ActionEvent e){
 			x.getPlayer().move(-1, 0, x.Labyrinth);
+			x.repaint();
 		}});
 	
 	right.addActionListener(new ActionListener(){
 		public void actionPerformed(ActionEvent e){
 			x.getPlayer().move(1, 0, x.Labyrinth);
+			x.repaint();
 		}});
 	}
 
